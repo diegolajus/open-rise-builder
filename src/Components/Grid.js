@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import '../Components/grid.scss'
+import '../Styles/grid.scss'
 import Legend from "./Legend";
+import domtoimage from "dom-to-image";
+import { saveAs } from 'file-saver'
+import dwIcon from '../assets/dwicon.png'
 
 export default function Grid({color}) {
-
-
     function selectHand(e){
         let bgColor = e.target.style
-               
         if ( bgColor.backgroundColor === '') {
             localStorage.setItem(e.target.textContent,color)
             bgColor.backgroundColor = localStorage.getItem(e.target.textContent)
@@ -34,13 +34,32 @@ export default function Grid({color}) {
         ]
     });
 
+    function saveGrid() {
+        var node = document.getElementById("my-node");
+        domtoimage
+        .toJpeg(node)
+        .then(function (dataUrl) {
+            var img = new Image();
+            img.src = dataUrl;
+            saveAs(img.src, 'open-rise.jpg') // Put your image url here.
+        })
+        .catch(function (error) {
+            console.error("oops, something went wrong!", error);
+        });
+    }
+
   return <div>
-        <div className='cards-grid'>
-            {deck.fullDeck.map(function(item, i){
-            return <a onClick={selectHand} className='cell noselect' key={i}>{item}</a>
-            })}
-        </div>
-        <div><Legend color={color}/></div>
+            <div id="my-node">
+                <div className='cards-grid'>
+                    {deck.fullDeck.map(function(item, i){
+                    return <a onClick={selectHand} className='cell noselect' key={i}>{item}</a>
+                    })}
+                <div><Legend color={color}/></div>
+                </div>
+            </div>
+            <div>
+            <a onClick={saveGrid} href=""><img className="dw-btn" src={dwIcon} alt="download" /></a>
+            </div>
     </div>
 };
 

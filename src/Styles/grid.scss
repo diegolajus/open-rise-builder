@@ -1,20 +1,25 @@
 
 .cards-grid{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-width: 655px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 780px;
     .cell{
         cursor: pointer;
+        background-color: rgb(221, 221, 221);
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid rgb(0, 0, 0);
-        height: 35px;
-        width: 35px;
+        height: 50px;
+        width: 50px;
         padding: 5px;
     }
 }
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -24,4 +29,16 @@ width: 655px;
     user-select: none; /* Non-prefixed version, currently
     supported by Chrome, Edge, Opera and Firefox */
 }
+#my-node{
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    width: fit-content;
+    background-color: white;
+}
+
+.dw-btn{
+    height: 75px;
+}
+
 

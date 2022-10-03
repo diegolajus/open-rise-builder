@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import '../Components/legend.scss'
+import '../Styles/legend.scss'
 
 const Legend = ({color}) => {
 
     const [inputList, setInputList] = useState([]);
-
 
     function selectHand(e){
         let bgColor = e.target.style
