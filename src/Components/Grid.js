@@ -4,7 +4,6 @@ import Legend from "./Legend";
 import domtoimage from "dom-to-image";
 import { saveAs } from 'file-saver'
 import dwIcon from '../assets/dwicon.png'
-
 export default function Grid({color}) {
     function selectHand(e){
         let bgColor = e.target.style
@@ -34,6 +33,7 @@ export default function Grid({color}) {
         ]
     });
 
+    const [foo, setFoo] = useState({})
     function saveGrid() {
         var node = document.getElementById("my-node");
         domtoimage
@@ -41,6 +41,7 @@ export default function Grid({color}) {
         .then(function (dataUrl) {
             var img = new Image();
             img.src = dataUrl;
+            document.getElementById("sidebar").appendChild(img)
             saveAs(img.src, 'open-rise.jpg') // Put your image url here.
         })
         .catch(function (error) {
@@ -48,7 +49,7 @@ export default function Grid({color}) {
         });
     }
 
-  return <div>
+  return <div className="grid-container">
             <div id="my-node">
                 <div className='cards-grid'>
                     {deck.fullDeck.map(function(item, i){
@@ -58,7 +59,9 @@ export default function Grid({color}) {
                 </div>
             </div>
             <div>
-            <a onClick={saveGrid} href=""><img className="dw-btn" src={dwIcon} alt="download" /></a>
+            <a onClick={saveGrid} href="#"><img className="dw-btn" src={dwIcon} alt="download" /></a>
+            </div>
+            <div id="sidebar">
             </div>
     </div>
 };
