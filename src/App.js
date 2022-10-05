@@ -1,7 +1,6 @@
 import React,{ useState } from 'react';
 import { HexColorPicker } from "react-colorful";
 import Grid from './Components/Grid';
-import './App.scss'
 export default function Color() {
 const [color, setColor] = useState("#aabbcc");
 
