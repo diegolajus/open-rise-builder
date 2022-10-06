@@ -14,7 +14,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 780px;
-    // margin: -20px;
     .cell{
         font-weight: 400;
         cursor: pointer;
@@ -38,9 +37,17 @@
     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.dw-btn{
-    height: 75px;
-    margin: 25px;
+.dw-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+    margin: 15px;
+    .dw-btn{
+        height: 75px;
+        margin: 5px;
+    }
 }
 
 #sidebar{

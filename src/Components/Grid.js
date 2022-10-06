@@ -4,7 +4,9 @@ import Legend from "./Legend";
 import domtoimage from "dom-to-image";
 import { saveAs } from 'file-saver'
 import dwIcon from '../assets/dwicon.png'
+
 export default function Grid({color}) {
+
     function selectHand(e){
         let bgColor = e.target.style
         if ( bgColor.backgroundColor === '') {
@@ -33,7 +35,6 @@ export default function Grid({color}) {
         ]
     });
 
-    const [foo, setFoo] = useState({})
     function saveGrid() {
         var node = document.getElementById("my-node");
         domtoimage
@@ -58,7 +59,7 @@ export default function Grid({color}) {
                 <div><Legend color={color}/></div>
                 </div>
             </div>
-            <div>
+            <div className="dw-btn-container">
             <a onClick={saveGrid} href="#"><img className="dw-btn" src={dwIcon} alt="download" /></a>
             </div>
             <div id="sidebar">
