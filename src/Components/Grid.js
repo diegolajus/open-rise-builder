@@ -40,10 +40,18 @@ export default function Grid({color}) {
         domtoimage
         .toJpeg(node)
         .then(function (dataUrl) {
+            var text = "Edit Title Here"
             var img = new Image();
+            var h = document.createElement("cite");
+            var t = document.createTextNode(text);
             img.src = dataUrl;
+            img.classList.add("foo");
+            img.onclick = function(){saveAs(img.src,h.textContent)};
+            h.contentEditable=true
+            h.appendChild(t);
+            document.getElementById("sidebar").appendChild(h)
             document.getElementById("sidebar").appendChild(img)
-            saveAs(img.src, 'open-rise.jpg') // Put your image url here.
+            saveAs(img.src, 'open-rise.jpg')
         })
         .catch(function (error) {
             console.error("oops, something went wrong!", error);
