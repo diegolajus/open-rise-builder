@@ -8,8 +8,7 @@ const Legend = ({color}) => {
     function selectHand(e){
         let bgColor = e.target.style
         if ( bgColor.backgroundColor === '') {
-            localStorage.setItem(e.target.textContent,color)
-            bgColor.backgroundColor = localStorage.getItem(e.target.textContent)
+            bgColor.backgroundColor = color
         } else if ( bgColor.backgroundColor = color ) {
             bgColor.backgroundColor = ''
         }

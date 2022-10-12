@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '../Styles/grid.scss'
+import '../Styles/responsive.scss'
 import Legend from "./Legend";
 import domtoimage from "dom-to-image";
 import { saveAs } from 'file-saver'
@@ -10,8 +11,8 @@ export default function Grid({color}) {
     function selectHand(e){
         let bgColor = e.target.style
         if ( bgColor.backgroundColor === '') {
-            localStorage.setItem(e.target.textContent,color)
-            bgColor.backgroundColor = localStorage.getItem(e.target.textContent)
+            // localStorage.setItem(e.target.textContent,color)
+            bgColor.backgroundColor = color
         } else if ( bgColor.backgroundColor = color ) {
             bgColor.backgroundColor = ''
         }
@@ -49,8 +50,10 @@ export default function Grid({color}) {
             img.onclick = function(){saveAs(img.src,h.textContent)};
             h.contentEditable=true
             h.appendChild(t);
+
             document.getElementById("sidebar").appendChild(h)
             document.getElementById("sidebar").appendChild(img)
+
             saveAs(img.src, 'open-rise.jpg')
         })
         .catch(function (error) {
@@ -64,7 +67,7 @@ export default function Grid({color}) {
                     {deck.fullDeck.map(function(item, i){
                     return <a onClick={selectHand} className='cell noselect' key={i}>{item}</a>
                     })}
-                <div><Legend color={color}/></div>
+                <div className="legend"><Legend color={color}/></div>
                 </div>
             </div>
             <div className="dw-btn-container">

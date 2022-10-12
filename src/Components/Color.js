@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import { HexColorPicker } from "react-colorful";
+import '../Styles/responsive.scss'
 
 export default function Color() {
 const [color, setColor] = useState("");
@@ -10,8 +11,11 @@ function changeColor(e) {
 }
   return (
     <div id='color'>
-      <HexColorPicker onChange={changeColor} />
-    </div>    
+    <section className="small example">
+      <HexColorPicker className='react-colorfull' onChange={changeColor} />
+    </section>
+    </div>  
+    
   )
 }
 

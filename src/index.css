@@ -5,13 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(90deg,#404051,#8f89ce,hsl(247, 22%, 23%));
+   background: linear-gradient(90deg,#404051,#8f89ce,hsl(247, 22%, 23%)); 
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
     background-attachment: initial;
     background-origin: initial;
-    background-clip: initial; */
+    background-clip: initial; 
 }
 
 code {

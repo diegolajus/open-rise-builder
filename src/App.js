@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import { HexColorPicker } from "react-colorful";
 import Grid from './Components/Grid';
 export default function Color() {
-const [color, setColor] = useState("#aabbcc");
+const [color, setColor] = useState("#9970D8");
 
 function changeColor(e) {
   let newColor = e
