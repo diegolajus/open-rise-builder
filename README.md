@@ -8,7 +8,7 @@
 
 <div align="center">
 
- ![alt text](/src/assets/openrise2.png "Title")
+ ![alt text](/src/assets/openrise3.png "Title")
  
 </div>
 
