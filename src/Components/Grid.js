@@ -5,8 +5,16 @@ import Legend from "./Legend";
 import domtoimage from "dom-to-image";
 import { saveAs } from 'file-saver'
 import dwIcon from '../assets/dwicon.png'
+import { HexColorPicker } from "react-colorful";
 
-export default function Grid({color}) {
+export default function Grid() {
+
+    const [color, setColor] = useState("#9970D8");
+
+    function changeColor(e) {
+        let newColor = e
+        setColor(newColor)
+    }
 
     function selectHand(e){
         let bgColor = e.target.style
@@ -36,25 +44,31 @@ export default function Grid({color}) {
         ]
     });
 
+    
+
     function saveGrid() {
+
         var node = document.getElementById("my-node");
+        document.getElementsByClassName("cards-grid")[0].style.backgroundColor = 'white';
         domtoimage
         .toJpeg(node)
         .then(function (dataUrl) {
-            var text = "Edit Title Here"
-            var img = new Image();
-            var h = document.createElement("cite");
-            var t = document.createTextNode(text);
-            img.src = dataUrl;
-            img.classList.add("foo");
-            img.onclick = function(){saveAs(img.src,h.textContent)};
-            h.contentEditable=true
-            h.appendChild(t);
+        document.getElementsByClassName("cards-grid")[0].style.backgroundColor = 'transparent';
+        var text = "Edit Title Here"
+        var img = new Image();
+        var h = document.createElement("cite");
+        var t = document.createTextNode(text);
+        img.src = dataUrl;
+        img.classList.add("foo");
+        img.onclick = function(){saveAs(img.src,h.textContent)};
+        h.contentEditable=true
+        h.appendChild(t);
 
-            document.getElementById("sidebar").appendChild(h)
-            document.getElementById("sidebar").appendChild(img)
+        document.getElementById("sidebar").appendChild(h)
+        document.getElementById("sidebar").appendChild(img)
 
-            saveAs(img.src, 'open-rise.jpg')
+        saveAs(img.src, 'open-rise.jpg')
+
         })
         .catch(function (error) {
             console.error("oops, something went wrong!", error);
@@ -62,6 +76,9 @@ export default function Grid({color}) {
     }
 
   return <div className="grid-container">
+            <div>
+                <HexColorPicker className='color' onChange={changeColor} />
+            </div>
             <div id="my-node">
                 <div className='cards-grid'>
                     {deck.fullDeck.map(function(item, i){
@@ -71,7 +88,7 @@ export default function Grid({color}) {
                 </div>
             </div>
             <div className="dw-btn-container">
-            <a onClick={saveGrid} href="#"><img className="dw-btn" src={dwIcon} alt="download" /></a>
+                <a onClick={saveGrid} href="#"><img className="dw-btn" src={dwIcon} alt="download" /></a>
             </div>
             <div id="sidebar">
             </div>

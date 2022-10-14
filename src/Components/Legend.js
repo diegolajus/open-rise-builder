@@ -16,11 +16,11 @@ const Legend = ({color}) => {
 
     return (
         <div className='situation-container'>
-            <a onClick={selectHand} className='noselect' href="#">UTG</a>
-            <a onClick={selectHand} className='noselect' href="#">MP</a>
-            <a onClick={selectHand} className='noselect' href="#">CO</a>
-            <a onClick={selectHand} className='noselect' href="#">BTN</a>
-            <a onClick={selectHand} className='noselect' href="#">SB</a>
+            <a onClick={selectHand} className='noselect' contentEditable='true' href="#">UTG</a>
+            <a onClick={selectHand} className='noselect' contentEditable='true' href="#">MP</a>
+            <a onClick={selectHand} className='noselect' contentEditable='true' href="#">CO</a>
+            <a onClick={selectHand} className='noselect' contentEditable='true' href="#">BTN</a>
+            <a onClick={selectHand} className='noselect' contentEditable='true' href="#">SB</a>
         </div>
     );
 }
