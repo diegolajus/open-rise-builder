@@ -5,7 +5,7 @@ cite{
 .grid-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 .cards-grid{
     justify-content: center;
@@ -15,7 +15,7 @@ cite{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 810px;
+    width: 806px;
     .cell{
         border: 1px solid black;
         font-weight: 400;
@@ -24,9 +24,8 @@ cite{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
-        width: 50px;
-        padding: 5px;
+        height: 60px;
+        width: 60px;
     }
 }
 }
