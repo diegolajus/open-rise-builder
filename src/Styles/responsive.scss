@@ -1,4 +1,4 @@
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 250px) and (max-device-width : 480px) {
     .App{
         display: flex;
         justify-content: center;
@@ -9,6 +9,20 @@
             width: 320px;
             text-align: center;
         }
+    }
+
+    .grid-container .cards-grid{
+        width: 100vw;
+        height: 374px;
+        width: 374px;
+        // 423
+
+    }
+    .grid-container .cards-grid .cell{
+        font-weight: 700;
+        font-size: 0.6rem;
+        height: 15px;
+        width: 15px;
     }
     
 .cards-grid {
@@ -24,7 +38,6 @@
             font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
-            // background-color: rgb(233, 40, 40);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,6 +48,7 @@
     }
 
     .legend {
+        background-color: white;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -55,5 +69,10 @@
             background-color: rgb(221, 221, 221);
         }
         
+    }
+
+    .dw-btn-container {
+        margin: 25px;
+
     }
   }
